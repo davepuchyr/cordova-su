@@ -9,7 +9,9 @@
     <name>Thahara</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Thahara is a new way to travel in Myanmar. We offer unique and authentic accommodation
+        and experiences around the country. Our properties are small and intimate, allowing us
+        to offer a genuinely personal experience.
     </description>
 
     <author href="http://www.in3s.com" email="root@in3s.com">
@@ -49,7 +51,6 @@
     <gap:plugin name="org.apache.cordova.contacts" />
     <gap:plugin name="org.apache.cordova.device-motion" />
     <gap:plugin name="org.apache.cordova.device-orientation" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.file-transfer" />
     <gap:plugin name="org.apache.cordova.globalization" />
@@ -60,6 +61,7 @@
     <gap:plugin name="org.apache.cordova.vibration" />
     -->
     <gap:plugin name="org.apache.cordova.device" version="0.2.8" />
+    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.7" />
 
     <!-- Third party plugins -->
