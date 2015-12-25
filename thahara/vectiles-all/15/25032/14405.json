@@ -1,1 +1,0 @@
-{"water-areas":{"features":[],"type":"FeatureCollection"},"highroad":{"features":[{"clipped":true,"geometry":{"coordinates":[[95.009768,21.229721],[95.020193,21.238182]],"type":"LineString"},"type":"Feature","id":"161805924","properties":{"kind":"rail","is_link":"no","is_bridge":"no","railway":"rail","sort_key":-0.5,"is_tunnel":"no","highway":null}}],"type":"FeatureCollection"}}
