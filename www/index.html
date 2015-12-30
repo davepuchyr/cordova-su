@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<HTML xmlns:svg="http://www.w3.org/2000/svg">
+   <HEAD>
+      <META http-equiv="content-type" content="text/html; charset=utf-8">
+      <META name="viewport" content="width=device-width, user-scalable=no">
+      <TITLE>audiog</title>
+<meta name="msapplication-tap-highlight" content="no" />
+      <STYLE>
+html {
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+   background: url(audiog/bg_ricepaper.jpg) repeat;
+}
+
+/* https://css-tricks.com/snippets/css/exactly-center-an-imagediv-horizontally-and-vertically/ */
+#logo {
+   width: 280px;
+   height: 177px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -140px;
+   margin-top: -140px;
+}
+
+#progressbar {
+   position: absolute;
+   margin: auto;
+   top: 20px;
+   right: 0;
+   left: 0;
+   border-radius: 13px; /* (height of inner div) / 2 + padding */
+   padding: 0px;
+   width: 99%;
+}
+
+#progressbar > div {
+   top: 50%;
+   background-color: #b19e7f;
+   width: 0%; /* Adjust with JavaScript */
+   height: 20px;
+   border-radius: 10px;
+}
+
+/* css3 that gwt can't handle */
+.poi input[type="radio"]:checked + label {
+   border: 2px solid white;
+}
+
+.settings input[type="radio"]:checked + label {
+   color: #e8e3da;
+   background: #b19e7f;
+   border: 2px solid #6d5d43;
+}
+
+      </STYLE>
+   </HEAD>
+   <BODY>
+      <IMG id="logo" src="audiog/logo_280.png" visibility="hidden" onload="this.style.visibility='visible'" />
+
+      <DIV id="progressbar">
+         <DIV id="bar"></DIV>
+      </DIV>
+      <SCRIPT>
+( function() {
+   var EntryPoint_static       = 5  // HARD-CODED in conjunction with EntryPoint static
+     , EntryPoint_onModuleLoad = 1  // HARD-CODED in conjunction with EntryPoint chain loader
+     , EntryPoint_main         = 2  // HARD-CODED in conjunction with EntryPoint.main
+     , views                   = 4  // HARD-CODED in conjunction with injected views
+     , nassets = EntryPoint_static + EntryPoint_onModuleLoad + EntryPoint_main + views
+     , assets  = 0
+     , style = document.getElementById( "bar" ).style
+   ;
+
+   window.notifyProgressBar = function( el, callback ) {
+      if ( el ) delete el.onload; // el == null when called from GWT
+
+      style.width = ++assets / nassets * 100 + "%";
+
+      if ( assets < nassets ) return; // short-circuit
+
+      style = null;
+
+      setTimeout( function() {
+         var progressbar = document.getElementById( "progressbar" )
+           , logo = document.getElementById( "logo" )
+         ;
+
+         delete window.notifyProgressBar;
+         progressbar.parentNode.removeChild( progressbar );
+         logo.parentNode.removeChild( logo );
+
+         callback();
+      }, 100 ); // HARD-CODED arbitrary millis just so the user sees the progressbar went to completion
+   }
+} )();
+      </SCRIPT>
+      <script type="text/javascript" src="cordova.js"></script>
+<SCRIPT type="text/javascript" src="audiog/audiog.nocache.js"></SCRIPT>
+
+   </BODY>
+</HTML>
+
