@@ -3,7 +3,8 @@
    <HEAD>
       <META http-equiv="content-type" content="text/html; charset=utf-8">
       <META name="viewport" content="width=device-width, user-scalable=no">
-      <TITLE>audiog</TITLE>
+      <TITLE>audiog</title>
+<meta name="msapplication-tap-highlight" content="no" />
       <STYLE>
 html {
    height: 100%;
@@ -63,14 +64,14 @@ body {
       </STYLE>
    </HEAD>
    <BODY>
-      <IMG id="logo" src="audiog/logo_280.png" visibility="hidden" onload="this.style.visibility='visible'" />
+      <IMG id="logo" src="audiog/logo_280.png" style="visibility: hidden;" onload="this.style.visibility='visible'" />
 
       <DIV id="progressbar">
          <DIV id="bar"></DIV>
       </DIV>
       <SCRIPT>
 ( function() {
-   var EntryPoint_static       = 5  // HARD-CODED in conjunction with EntryPoint static
+   var EntryPoint_static       = 6  // HARD-CODED in conjunction with EntryPoint static
      , EntryPoint_onModuleLoad = 1  // HARD-CODED in conjunction with EntryPoint chain loader
      , EntryPoint_main         = 2  // HARD-CODED in conjunction with EntryPoint.main
      , views                   = 4  // HARD-CODED in conjunction with injected views
@@ -102,7 +103,9 @@ body {
    }
 } )();
       </SCRIPT>
-      <SCRIPT type="text/javascript" src="audiog/audiog.nocache.js"></SCRIPT>
+      <script type="text/javascript" src="cordova.js"></script>
+<SCRIPT type="text/javascript" src="audiog/audiog.nocache.js"></SCRIPT>
+
    </BODY>
 </HTML>
 

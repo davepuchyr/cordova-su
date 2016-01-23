@@ -1,24 +1,24 @@
 {
-    "org.apache.cordova.console": {
+    "cordova-plugin-console": {
         "source": {
             "type": "registry",
-            "id": "org.apache.cordova.console"
+            "id": "cordova-plugin-console@1.0.1"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "org.apache.cordova.device": {
+    "cordova-plugin-device": {
         "source": {
             "type": "registry",
-            "id": "org.apache.cordova.device"
+            "id": "cordova-plugin-device@1.1.0"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "org.apache.cordova.dialogs": {
+    "cordova-plugin-dialogs": {
         "source": {
             "type": "registry",
-            "id": "org.apache.cordova.dialogs"
+            "id": "cordova-plugin-dialogs@1.2.0"
         },
         "is_top_level": true,
         "variables": {}
